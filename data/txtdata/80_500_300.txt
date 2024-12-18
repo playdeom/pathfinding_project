@@ -1,0 +1,27 @@
+iterations: 500
+maze size: 80
+
+[A*]
+average moves=183.884, turns=94.334, time=263.16794944742287
+
+[Flood Fill]
+average moves=183.884, turns=94.832, time=263.0184624399835
+
+[Rotation aware (0.5)]
+average moves=184.416, turns=81.418, time=258.14032546785575
+
+[Rotation aware (1)]
+average moves=185.58, turns=79.784, time=258.3268739475146
+
+[UF SPS]
+average moves=187.612, turns=79.13, time=258.5928622464786
+
+[MHIP]
+average moves=186.852, turns=79.35, time=259.5911498461305
+
+[PSO]
+average moves=184.884, turns=95.378, time=264.5515944655307
+
+[DFS]
+average moves=1242.06, turns=692.82, time=1787.6897109801928
+
