@@ -225,6 +225,7 @@ if __name__ == "__main__":
     import random
     geteven=list(range(20,101,2))
     import tqdm
+    
     for iter in tqdm.tqdm(range(t)):
         # n = random.choice(geteven)
         horizontal_walls, vertical_walls = generate_perfect_maze(n)

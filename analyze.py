@@ -18,7 +18,7 @@ for file in files:
     if '.csv' in file:
         datas.append(file)
 print(datas)
-
+getbest=pd.DataFrame()
 algolist=['A*','Flood Fill','RA(0.5)','RA(1)','UFSPS','MHIP','PSO']
 for d in datas:
     df=pd.read_csv(d)
