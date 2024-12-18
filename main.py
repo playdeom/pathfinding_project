@@ -264,30 +264,30 @@ if __name__ == "__main__":
         pso_time = calculate_physical_time_for_path(pso_path)
         # rl_time = calculate_physical_time_for_path(rl_path)
 
-        with open("results.txt", "w", encoding="utf-8") as f:
-            f.write("[A*]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(a_star_moves, a_star_turns, a_star_time))
+        # with open("results.txt", "w", encoding="utf-8") as f:
+        #     f.write("[A*]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(a_star_moves, a_star_turns, a_star_time))
 
-            f.write("[Flood Fill]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(flood_moves, flood_turns, flood_time))
+        #     f.write("[Flood Fill]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(flood_moves, flood_turns, flood_time))
 
-            f.write("[Rotation aware (turn_cost=0.5)]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(rotation_moves_t05, rotation_turns_t05, rotation_time_t05))
+        #     f.write("[Rotation aware (turn_cost=0.5)]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(rotation_moves_t05, rotation_turns_t05, rotation_time_t05))
 
-            f.write("[Rotation aware (turn_cost=1)]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(rotation_moves_t1, rotation_turns_t1, rotation_time_t1))
+        #     f.write("[Rotation aware (turn_cost=1)]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(rotation_moves_t1, rotation_turns_t1, rotation_time_t1))
 
-            f.write("[UF SPS]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(uf_sps_moves, uf_sps_turns, uf_sps_time))
+        #     f.write("[UF SPS]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(uf_sps_moves, uf_sps_turns, uf_sps_time))
 
-            f.write("[MHIP]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(mhip_moves, mhip_turns, mhip_time))
+        #     f.write("[MHIP]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(mhip_moves, mhip_turns, mhip_time))
 
-            f.write("[PSO]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(pso_moves, pso_turns, pso_time))
+        #     f.write("[PSO]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(pso_moves, pso_turns, pso_time))
 
-            f.write("[DFS]\n")
-            f.write("moves={}, turns={}, time={}\n\n".format(dfs_moves, dfs_turns, dfs_time))
+        #     f.write("[DFS]\n")
+        #     f.write("moves={}, turns={}, time={}\n\n".format(dfs_moves, dfs_turns, dfs_time))
 
             # f.write("[RL Learning]\n")
             # f.write("최종경로: 이동={}, 턴={}\n\n".format(rl_moves, rl_turns))
@@ -346,7 +346,7 @@ if __name__ == "__main__":
         # f.write("최종경로: 이동={}, 턴={}\n\n".format(rl_average_moves/t, rl_average_turns/t))
         
     # 시각화 (최종 경로만 표시)
-    draw_maze(n, horizontal_walls, vertical_walls, end_path=pso_path, title="PSO Path with Loops")
+    # draw_maze(n, horizontal_walls, vertical_walls, end_path=pso_path, title="PSO Path with Loops")
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=rotation_path_t1, title="Rotation-Aware Path with Loops")
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=a_star_path, title="A* Path with Loops")
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=flood_path, title="Flood Fill Path with Loops")

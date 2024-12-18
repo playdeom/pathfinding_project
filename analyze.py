@@ -11,7 +11,6 @@ def list_all_files(directory):
             all_files.append(os.path.join(root, file))
     return all_files
 
-# 사용 예제
 datas=[]
 directory_path = "data/"
 files = list_all_files(directory_path)
@@ -49,10 +48,9 @@ for d in datas:
     plt.bar(x - width, turns, width, label='turns')
     plt.bar(x + width, time, width, label='time')
     plt.title(f'{d}')
-    plt.xticks(x, algolist)  # X축 레이블 설정
+    plt.xticks(x, algolist)
     plt.xlabel('cartegory')
     plt.ylabel('value')
     plt.legend()
 
-    # 그래프 표시
     plt.show()
