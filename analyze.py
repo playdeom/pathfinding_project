@@ -18,7 +18,8 @@ for file in files:
     if '.csv' in file:
         datas.append(file)
 print(datas)
-algolist=['A*','Flood Fill','Rotation Aware(0.5)','Rotation Aware(1)','UF SPS','MHIP','PSO']
+
+algolist=['A*','Flood Fill','RA(0.5)','RA(1)','UFSPS','MHIP','PSO']
 for d in datas:
     df=pd.read_csv(d)
     # print(df.head())

@@ -307,14 +307,14 @@ if __name__ == "__main__":
     import pandas as pd
     df=pd.DataFrame({"A*":[a_star_average_moves/t,a_star_average_turns/t,a_star_average_time/t],
                         "Flood Fill":[flood_average_moves/t,flood_average_turns/t,flood_average_time/t],
-                        "Rotation Aware(0.5)":[rotation_average_moves_t05/t,rotation_average_turns_t05/t,rotation_average_time_t05/t],
-                        "Rotation Aware(1)":[rotation_average_moves_t1/t,rotation_average_turns_t1/t,rotation_average_time_t1/t],
-                        "UF SPS":[uf_sps_average_moves/t,uf_sps_average_turns/t,uf_sps_average_time/t],
+                        "RA(0.5)":[rotation_average_moves_t05/t,rotation_average_turns_t05/t,rotation_average_time_t05/t],
+                        "RA(1)":[rotation_average_moves_t1/t,rotation_average_turns_t1/t,rotation_average_time_t1/t],
+                        "UFSPS":[uf_sps_average_moves/t,uf_sps_average_turns/t,uf_sps_average_time/t],
                         "MHIP":[mhip_average_moves/t,mhip_average_turns/t,mhip_average_time/t],
                         "PSO":[pso_average_moves/t,pso_average_turns/t,pso_average_time/t],
                         "DFS":[dfs_average_moves/t,dfs_average_turns/t,dfs_average_time/t]})
-    df.to_csv(f'data/average_res_{n}_{t}_{r}.csv',index=False)
-    with open(f'data/average_res_{n}_{t}_{r}.txt','w',encoding='utf-8') as f:
+    df.to_csv(f'data/csvdata/{n}_{t}_{r}.csv',index=False)
+    with open(f'data/txtdata/{n}_{t}_{r}.txt','w',encoding='utf-8') as f:
         f.write("iterations: {}\n".format(t))
         f.write("maze size: {}\n\n".format(n))
         
@@ -345,7 +345,7 @@ if __name__ == "__main__":
         # f.write("[RL Learning]\n")
         # f.write("최종경로: 이동={}, 턴={}\n\n".format(rl_average_moves/t, rl_average_turns/t))
         
-    # 시각화 (최종 경로만 표시)
+    # Visualize the maze with the paths
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=pso_path, title="PSO Path with Loops")
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=rotation_path_t1, title="Rotation-Aware Path with Loops")
     # draw_maze(n, horizontal_walls, vertical_walls, end_path=a_star_path, title="A* Path with Loops")
