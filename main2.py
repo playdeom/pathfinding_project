@@ -87,17 +87,52 @@ if __name__=='__main__':
             mhip_average_moves,mhip_average_turns,mhip_average_time=update_average(mhip_average_moves,mhip_average_turns,mhip_average_time,mhip_moves,mhip_turns,mhip_time)
             pso_average_moves,pso_average_turns,pso_average_time=update_average(pso_average_moves,pso_average_turns,pso_average_time,pso_moves,pso_turns,pso_time)
         
-        data["A*"].append([a_star_average_moves/t,a_star_average_turns/t,a_star_average_time/t])
-        data["Flood Fill"].append([flood_average_moves/t,flood_average_turns/t,flood_average_time/t])
-        data["RA(0.5)"].append([rotation_average_moves_t05/t,rotation_average_turns_t05/t,rotation_average_time_t05/t])
-        data["RA(1)"].append([rotation_average_moves_t1/t,rotation_average_turns_t1/t,rotation_average_time_t1/t])
-        data["UFSPS"].append([uf_sps_average_moves/t,uf_sps_average_turns/t,uf_sps_average_time/t])
-        data["MHIP"].append([mhip_average_moves/t,mhip_average_turns/t,mhip_average_time/t])
-        data["PSO"].append([pso_average_moves/t,pso_average_turns/t,pso_average_time/t])
-        data["DFS"].append([dfs_average_moves/t,dfs_average_turns/t,dfs_average_time/t])
-    
+        data["A*"].append([a_star_average_moves/t, a_star_average_turns/t, a_star_average_time/t])
+        data["Flood Fill"].append([flood_average_moves/t, flood_average_turns/t, flood_average_time/t])
+        data["RA(0.5)"].append([rotation_average_moves_t05/t, rotation_average_turns_t05/t, rotation_average_time_t05/t])
+        data["RA(1)"].append([rotation_average_moves_t1/t, rotation_average_turns_t1/t, rotation_average_time_t1/t])
+        data["UFSPS"].append([uf_sps_average_moves/t, uf_sps_average_turns/t, uf_sps_average_time/t])
+        data["MHIP"].append([mhip_average_moves/t, mhip_average_turns/t, mhip_average_time/t])
+        data["PSO"].append([pso_average_moves/t, pso_average_turns/t, pso_average_time/t])
+        data["DFS"].append([dfs_average_moves/t, dfs_average_turns/t, dfs_average_time/t])
+        
     import pandas as pd
-    df=pd.DataFrame({"A*":data["A*"],"Flood Fill":data["Flood Fill"],"RA(0.5)":data["RA(0.5)"],"RA(1)":data["RA(1)"],"UFSPS":data["UFSPS"],"MHIP":data["MHIP"],"PSO":data["PSO"],"DFS":data["DFS"]})
-    df.to_csv(f'data/asdf.csv',index=False)
-        
-        
+
+    # Save Moves data
+    df_moves = pd.DataFrame({
+        "A*": [item[0] for item in data["A*"]],
+        "Flood Fill": [item[0] for item in data["Flood Fill"]],
+        "RA(0.5)": [item[0] for item in data["RA(0.5)"]],
+        "RA(1)": [item[0] for item in data["RA(1)"]],
+        "UFSPS": [item[0] for item in data["UFSPS"]],
+        "MHIP": [item[0] for item in data["MHIP"]],
+        "PSO": [item[0] for item in data["PSO"]],
+        "DFS": [item[0] for item in data["DFS"]]
+    })
+    df_moves.to_csv(f'data/moves.csv', index=False)
+
+    # Save Turns data
+    df_turns = pd.DataFrame({
+        "A*": [item[1] for item in data["A*"]],
+        "Flood Fill": [item[1] for item in data["Flood Fill"]],
+        "RA(0.5)": [item[1] for item in data["RA(0.5)"]],
+        "RA(1)": [item[1] for item in data["RA(1)"]],
+        "UFSPS": [item[1] for item in data["UFSPS"]],
+        "MHIP": [item[1] for item in data["MHIP"]],
+        "PSO": [item[1] for item in data["PSO"]],
+        "DFS": [item[1] for item in data["DFS"]]
+    })
+    df_turns.to_csv(f'data/turns.csv', index=False)
+
+    # Save Time data
+    df_time = pd.DataFrame({
+        "A*": [item[2] for item in data["A*"]],
+        "Flood Fill": [item[2] for item in data["Flood Fill"]],
+        "RA(0.5)": [item[2] for item in data["RA(0.5)"]],
+        "RA(1)": [item[2] for item in data["RA(1)"]],
+        "UFSPS": [item[2] for item in data["UFSPS"]],
+        "MHIP": [item[2] for item in data["MHIP"]],
+        "PSO": [item[2] for item in data["PSO"]],
+        "DFS": [item[2] for item in data["DFS"]]
+    })
+    df_time.to_csv(f'data/time.csv', index=False)
